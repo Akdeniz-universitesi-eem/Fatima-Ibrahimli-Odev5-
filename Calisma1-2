@@ -1,0 +1,50 @@
+// Calisma 1 :
+/*
+ UML (Unified Modeling Language - Birleşik Modelleme Dili), yazılım mühendisliği projelerinde tasarım, 
+ analiz ve dokümantasyon amaçları için kullanılan grafik modelleme dilidir.En yaygın kullanılan UML 
+ bileşenleri genellikle sınıf diyagramları, sekans diyagramları ve durum makinesi diyagramlarıdır.
+ Bu bileşenler, bir yazılım projesinin temel yapısını, işlevselliğini ve davranışını görselleştirmek
+  için sıkça kullanılır.UML, yazılım geliştirme sürecini daha anlaşılır ve yönetilebilir hale getirerek 
+  yazılım projelerinin başarılı bir şekilde planlanmasına ve yönetilmesine yardımcı olur.
+
+  1 - Sınıf Diyagramları (Class Diagrams)
+  2 - Davranış Diyagramları (Behavioral Diagrams)
+  3 - Sekans Diyagramları (Sequence Diagrams)
+  4 - Komponent Diyagramları (Component Diagrams)
+  5 -Durum Makinesi Diyagramları (State Machine Diagrams)
+  6 - Dağıtım Diyagramları (Deployment Diagrams)
+  7 - Kolaborasyon Diyagramları (Collaboration Diagrams)
+  8 - Karakteristik Modeller (Profile Diagrams)
+   */
+
+   // Calisma 2 :
+   /*
+    ---ArrayList:
+
+--Verileri bir dizi şeklinde saklar, yani indis tabanlıdır.
+--Veri erişimi hızlıdır, çünkü indis kullanarak doğrudan erişim sağlar.
+--Veri eklemesi ve çıkarması başlangıç veya sona göre hızlıdır, ancak ortadan bir öğe çıkarmak yavaş olabilir.
+--Kullanım amacı: Listelerde, verilerin sıralı bir şekilde depolanmasını gerektiren durumlar için idealdir.
+   
+---LinkedList:
+
+--Verileri çift yönlü bağlı liste şeklinde saklar, yani her eleman bir sonraki ve bir önceki elemanı işaret eder.
+--Veri erişimi daha yavaşdır, çünkü indis kullanarak doğrudan erişim yoktur.
+--Veri eklemesi ve çıkarması başlangıç, orta veya sona göre hızlıdır.
+--Kullanım amacı: Veri ekleme ve çıkarma işlemleri sık yapılan senaryolarda tercih edilir.
+
+  ---HashMap:
+
+--Anahtar-değer çiftleri şeklinde verileri saklar.
+--Anahtarlar benzersiz olmalıdır, yani aynı anahtarla birden fazla değer saklanamaz.
+--Anahtarlarla değerlere hızlı erişim sağlar.
+--Kullanım amacı: Verilerin bir anahtarla ilişkilendirildiği durumlarda kullanılır, özellikle hızlı 
+  erişim gerektiren durumlar için idealdir.
+
+ ---HashSet:
+
+--Benzersiz değerleri saklar, yani aynı değeri birden fazla kez eklemeye izin vermez.
+--Verilere sırasız bir şekilde saklar.
+--Hızlı veri ekleme ve veriye erişim sağlar.
+--Kullanım amacı: Bir veri kümesinin benzersiz elemanlarını saklamak istendiğinde kullanılır.
+    */
