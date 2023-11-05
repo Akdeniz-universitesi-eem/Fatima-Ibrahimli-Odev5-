@@ -1,0 +1,138 @@
+// Calisma 3(otel sorusu kayit kismi JFrame)
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Kayit1 {
+    private JFrame frame;
+    private JTextField nameField;
+    private JTextField lastNameField;
+    private JTextField mailField;
+    private JTextField numaraField;
+    private JButton saveButton;
+    private JTextField searchField;
+    private JButton searchButton;
+    private JLabel resultLabel;
+    private JTextArea resultArea;
+
+    private Map<String, String > reservations;
+     //   private Map<String, String > reservations2;
+     /*
+      kodda yasadigim bir sorundan dolayi 2. bir map olusturmaya calistim ama kod yine hata verdi. Rezervasyon
+      ya gozukmuyor ya da sadece isim ve soyismi kabul edip mail ve numara kismina da sadece soyismi 
+      kayit ediyor.
+      */
+
+        
+
+    public Kayit1() {
+        frame = new JFrame(" Yeni Rezervasyon");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLayout(new FlowLayout());
+
+        reservations = new HashMap<>();
+      //  reservations2 = new HashMap<>();
+
+      // Isim , soyisim , mail  ve telefon numarasi her biri icin input girilebilecek bir alan olusturdum.
+
+        JLabel nameLabel = new JLabel("Ad :");
+        nameField = new JTextField(20);
+
+        JLabel lastNameLabel = new JLabel("Soyad :");
+        lastNameField = new JTextField(20);
+
+        JLabel mailLabel = new JLabel("E-Posta :");
+        mailField = new JTextField(20);
+
+         JLabel numaraLabel = new JLabel("Telefon numarasi :");
+         numaraField = new JTextField(20);
+
+        saveButton = new JButton("Rezervasyonu Kaydet");
+        saveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = nameField.getText();
+                /*
+                 * Rezervasyon kayit kisminda isim ile bulundugu icin sadece isim icin buyuk kucuk harf
+                 * farketmeksizin istenen rezervasyonu bulmaya calistim ama yazdigim kodu gormeden calisiyor.
+                 */
+            //    name.equalsIgnoreCase(name);
+                String lastName = lastNameField.getText();
+                String mail = mailField.getText();
+                String number = numaraField.getText();
+                reservations.put(name, lastName);
+                reservations.put(mail, number);
+               
+                
+                JOptionPane.showMessageDialog(frame, "Rezervasyon kaydedildi.");
+                // Burada yazilan kod rezervasyon kayit olduktan sonra input girilecek olan alani temizliyor.
+                nameField.setText("");
+                lastNameField.setText("");
+                mailField.setText("");
+                numaraField.setText("");
+                
+            }
+        });
+
+        JLabel searchLabel = new JLabel("Rezervasyon Sahibi:");
+        searchField = new JTextField(20);
+
+        searchButton = new JButton("Rezervasyonu Bul");
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Bu kisim kullanici tarafindan girilen yazilari yazdirmayi sagliyor.
+                String reservationName = searchField.getText();
+                String customerLastName = reservations.get(reservationName);
+                String customerEmail = reservations.get(reservationName);
+                String customerNumber = reservations.get(reservationName);
+
+              
+                if (customerLastName != null && customerEmail != null && customerNumber !=null ) {
+                    resultArea.setText("Rezervasyon sahibi : " + reservationName +" Soyad : "+customerLastName +"  E-Posta : " + customerEmail +"  Telefon numarasi :  "+customerNumber);
+                } else {
+                    resultArea.setText("Rezervasyon bulunamadı.");
+                }
+            }
+        });
+
+        // Kaydedilen rezervasyonlari belirledigim alanda gosteriyor.
+        resultArea = new JTextArea(10, 70); 
+        resultArea.setEditable(false); 
+
+        JScrollPane scrollPane = new JScrollPane(resultArea); 
+
+
+        resultLabel = new JLabel();
+
+        frame.add(nameLabel);
+        frame.add(nameField);
+        frame.add(lastNameLabel);
+        frame.add(lastNameField);
+        frame.add(mailLabel);
+        frame.add(mailField);
+        frame.add(numaraLabel);
+        frame.add(numaraField);
+        frame.add(saveButton);
+        frame.add(searchLabel);
+        frame.add(searchField);
+        frame.add(searchButton);
+        frame.add(resultLabel);
+        frame.add(scrollPane);
+
+        frame.setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new Kayit1();
+            }
+        });
+    }
+}
