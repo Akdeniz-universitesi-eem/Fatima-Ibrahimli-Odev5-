@@ -1,0 +1,34 @@
+// Calisma 4 (UpperLower): 
+import java.util.Scanner;
+
+public class changeCase {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Metin girin :");
+        String inputWord = scan.nextLine();
+        String cevirilisMetin = harfDonusum(inputWord);
+        System.out.println("Orjinal Metin: " + inputWord);
+        System.out.println("Dönüştürülmüş Metin: " + cevirilisMetin);
+
+        scan.close();
+    }
+
+    public static String harfDonusum(String text) {
+        StringBuilder cevirilmisMetin = new StringBuilder();
+        
+        //Harflerin hepsini teker teker inceleyip hesine sayi verip, buyuk harfleri kucuk harfe , kucuk harfleri 
+        //buyuk harfe ceviriyor.
+        for (int i = 0; i < text.length(); i++) {
+            char Char = text.charAt(i);
+            if (Character.isLowerCase(Char)) {
+                cevirilmisMetin.append(Character.toUpperCase(Char));
+            } else if (Character.isUpperCase(Char)) {
+                cevirilmisMetin.append(Character.toLowerCase(Char));
+            } else {
+                cevirilmisMetin.append(Char);
+            }
+        }
+        return cevirilmisMetin.toString();
+        
+    }
+}
