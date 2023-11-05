@@ -1,0 +1,65 @@
+// Calisma 3:
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class otelKaydi {
+    private String isim;
+    private String soyIsim;
+    private String mail;
+    private String numara;
+
+    public otelKaydi(String isim, String soyIsim, String mail, String numara) {
+        this.isim = isim;
+        this.soyIsim = soyIsim;
+        this.mail = mail;
+        this.numara = numara;
+    }
+
+    public String getIsim() {
+        return isim;
+    }
+
+    public String toString() {
+        return "İsim: " + isim + ", Soyisim: " + soyIsim + ", E-Posta: " + mail + ", Numara: " + numara;
+    }
+}
+
+public class Kayit {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        List<otelKaydi> kayitlar = new ArrayList<>();
+
+        while (true) {
+            System.out.print("İsim: ");
+            String isim = scan.next();
+
+            System.out.print("Soyisim: ");
+            String soyIsim = scan.next();
+
+            System.out.print("E-Posta: ");
+            String mail = scan.next();
+
+            System.out.print("Numara: ");
+            String numara = scan.next();
+
+            otelKaydi kayit = new otelKaydi(isim, soyIsim, mail, numara);
+            kayitlar.add(kayit);
+
+            break;
+
+        } 
+        System.out.print("Aranacak İsim: ");
+        
+        String arananIsim = scan.next();
+
+
+        for (otelKaydi kayit : kayitlar) {
+            // Buyuk , kucuk harf farketmeksizin kayit olunmus ismi buluyor.
+            if (kayit.getIsim().equalsIgnoreCase(arananIsim)) {
+                System.out.println("Aranan Kayıt Bulundu: " + kayit);
+            }
+        }
+    }
+}
