@@ -1,3 +1,29 @@
+// Calisma 3(otel sorusu):
+/*
+     * resepsiyon gorevlisi:
+       1 - otel giris cikis 
+       2 - rezervasyon ve tipi
+       3 - rezervasyon degisiklik
+
+
+       muhasebe :(set ile cagiricam)
+       1 - otel giris cikis 
+       2 - rezervasyon tipi 
+
+       musteri :
+       1 - online 
+       2 - telefonla 
+
+       rezervasyon gorevlisi
+       1 - rezervasyon tipi
+       2 - rezervasyon degisiklik
+     */
+/*
+     * Bu dosyadaki kod rezervasyon olusturmak icin  veya var olan rezervasyonda bir degisiklik yapmak icin 
+     * her birini farkli bir siteye yonlendirme yapiyor.
+     */
+
+
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Frame;
