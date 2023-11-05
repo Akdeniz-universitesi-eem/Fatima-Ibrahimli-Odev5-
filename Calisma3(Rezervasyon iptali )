@@ -1,0 +1,24 @@
+// Calisma 3(rezervasyon iptali ekleme)
+// Kayit kismindan farkli olan kisimlar asagidaki gibidir kayit dosyasi ile birlestirilip MyFrame dosyasina eklenmelidir.
+/*
+ * public class Kayit1 -- kismina '    private JButton cancelReservationButton;' 
+ * 
+ * REZERVASYON IPTALI ICIN EKLENEN KISIM
+ * cancelReservationButton = new JButton("Rezervasyonu İptal Et");
+        cancelReservationButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String reservationName = searchField.getText();
+                String removed = reservations.remove(reservationName);
+                if (removed != null) {
+                    resultArea.append("Rezervasyon iptal edildi: " + removed + "\n");
+                } else {
+                    resultArea.append("Rezervasyon bulunamadı.\n");
+                }
+                searchField.setText("");
+            }
+        });
+
+         frame.add(cancelReservationButton); -- butonun gozukmesini sagliyor.
+ */
+// BURADA YAZILANLAR TEK BASINA CALISMAZ!!!
