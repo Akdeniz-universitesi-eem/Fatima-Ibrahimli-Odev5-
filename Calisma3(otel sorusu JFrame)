@@ -18,24 +18,23 @@ public class MyFrame extends JFrame {
 
      public static void main(String[] args) {
         MyFrame frame = new MyFrame();
-        
-        // JFrame'i görünür yap
         frame.setLayout(null);
         frame.setVisible(true);
     }
 
-
       public MyFrame() {
        
         setTitle("Odev5tekrar1");
-        // Pencere boyutu
+        // Frame boyutu  ayarliyor
         setSize(500, 300);
         setLayout(new FlowLayout());
        
-        // Kapatma düğmesi işlevi
+        // Kapatma kucultme buyutme dugmesi
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        
 
+        //Olusturulan pencerede yeni rezervasyon ve rezervasyon takip adi altinda 2 farkli buton olusturdum
+        //Butonlar her biri farkli bir pencere aciyor 
          JButton evetButton = new JButton(" Yeni Rezervasyon");
         evetButton.setBounds(468, 250, 300, 50);
 
@@ -63,7 +62,8 @@ public class MyFrame extends JFrame {
          
                 int result = JOptionPane.showConfirmDialog(null, "Online rezervasyon icin 'Yes' , Telefon icin 'No' tiklayin!", "Onay", JOptionPane.YES_NO_OPTION);
                 if (result == JOptionPane.YES_OPTION) {
-                    // Yeni bir JFrame aç
+                
+                    // Kayit sayfasi iicn yazilan kod diger dosyada daha eklenmedi.
                     JFrame newFrame = new JFrame("Kayit Sayfasi");
                     newFrame.setSize(300, 200);
 
@@ -76,6 +76,7 @@ public class MyFrame extends JFrame {
                      // Metin rengini değiştir
                      label.setForeground(java.awt.Color.BLACK);
 
+                     // Yazi tipini ayarlar 
                      Font font = new Font("Arial", Font.BOLD, 20);
                      label.setFont(font);
 
@@ -107,6 +108,7 @@ public class MyFrame extends JFrame {
                 newFrame.setSize(500, 300);
 
                 JLabel label = new JLabel("Başka Sayfa");
+                // Konum ayarlamasinda kucuk bir problem olustu.
                  label.setBounds(100, 50, 200, 100);
                 newFrame.add(label);
                 newFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -119,7 +121,7 @@ public class MyFrame extends JFrame {
        
               
  
-       
+       // Ilk olusturulan pencerede yazilan yazinin boyutunu , tipini rengini konum vb. ayarliyor.
         JLabel label = new JLabel("Otel Rezervasyon sitesi");
         
         // Metnin koordinatlarını ve boyutunu ayarla
@@ -137,3 +139,5 @@ public class MyFrame extends JFrame {
 
     }
   
+   
+
