@@ -1,0 +1,39 @@
+// Calisma 5: 
+
+import java.util.Scanner;
+
+public class squeeze {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Metin girisi yapin:");
+
+        String text1 = scan.nextLine();
+        System.out.println("Cikarmak istediginiz harfleri girin :");
+
+        String text2 = scan.nextLine();
+
+        String squeezedText = squeezeTest(text1, text2);
+        // Yazmis oldugum kodu burada cagiriyorum
+        System.out.println("Orijinal Metin :" + text1);
+        System.out.println("Cikarilan harfler : " + text2);
+        System.out.println("Sıkıştırılmış metin: " + squeezedText);
+        
+        scan.close();
+    }
+
+    public static String squeezeTest(String text1, String text2) {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < text1.length(); i++) {
+            char metinHarf = text1.charAt(i);
+            // Verilen text'in her bir harfine bir 'i' sayisi tanimlamasini , daha sonra verilen metinden 
+            // diger metinde olan harflerin cikarilmasini istedim
+            if (text2.indexOf(metinHarf) == -1) {
+                result.append(metinHarf);
+            }
+        }
+
+        return result.toString();
+        
+    }
+}
